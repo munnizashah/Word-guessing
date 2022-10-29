@@ -4,18 +4,20 @@ const form = document.getElementById("guessForm");
 const errorMessage = document.getElementById("errorMessage");
 const successMessage = document.getElementById("successMessage");
 
-let number = Math.floor(Math.random() * 100) + 1;
+// let number = Math.floor(Math.random() * 100) + 1;
+let number = 45;
 
 form.onsubmit = function (event) {
   event.preventDefault(); 
 
   let guess = Number(form.elements.guess.value);
   form.elements.guess.value = "";
+  
 
   if (Number.isNaN(guess)) {
     showErrorMessage("That is not a number...");
   } else if (guess === number) {
-    successMessage.innerHTML = "Correct!";
+    showSuccessMessage("Correct");
   } else if (guess < number) {
     showErrorMessage("Higher");
   } else if (guess > number) {
@@ -33,11 +35,13 @@ function showErrorMessage(message) {
 }
 
 function showSuccessMessage(message) {
-    successMessage.classList.add("visible");
-    successMessage.innerHTML = message;
+successMessage.classList.add("visible");
+successMessage.innerHTML = message;
 
-    setTimeout(function () {
-        successMessage.classList.remove("visible");
-      }, 1000);
+setTimeout(function () {
+  successMessage.classList.remove("visible");
+}, 1000);
+}
 
-    }
+
+

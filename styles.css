@@ -9,24 +9,49 @@
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
   }
+
+  .title {
+    margin: 1rem;
+  }
   
   .content {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: solid white 0.5rem;
+    padding: 12rem;
   }
+
+  .content:hover {
+   transition: color 0.25s;
+
+
+  }
+
   
   .error-message {
     position: absolute;
     top: 70%;
-    left: 50%;
-    transform: translate(-70%, -50%);
+    left: 51%;
+    transform: translate(-70%, -51%);
     background-color: grey;
+    width: 10rem;
     padding: 2rem;
     visibility: hidden;
     opacity: 0.8;
     transition: opacity 0.4s;
+    border: solid white 0.5rem;
+    border-radius: 10px;
+    text-align: center;
+  }
+
+  button {
+    padding: 0.7rem;
+  }
+
+  input {
+    padding: 0.7rem;
   }
 
   .visible {
@@ -44,6 +69,9 @@
     visibility: hidden;
     opacity: 0.8;
     transition: opacity 0.4s;
+    border: solid black 0.5rem;
+    border-radius: 10px;
+    text-align: center;
   }
 
   .visible {
